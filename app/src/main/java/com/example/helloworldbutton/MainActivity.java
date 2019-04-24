@@ -1,9 +1,7 @@
 package com.example.helloworldbutton;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.Layout;
-import android.view.View;
+import android.support.v7.app.AppCompatActivity;
 import android.view.ViewGroup;
 import android.widget.Button;
 
@@ -15,14 +13,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        final Button helloWorldButton = (Button) findViewById(R.id.button);
+        Button helloWorldButton = findViewById(R.id.button);
 
-        helloWorldButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                ViewGroup viewGroup = (ViewGroup) helloWorldButton.getParent();
-                viewGroup.removeView(helloWorldButton);
-            }
+        helloWorldButton.setOnClickListener(v -> {
+            ViewGroup viewGroup = (ViewGroup) helloWorldButton.getParent();
+            viewGroup.removeView(helloWorldButton);
         });
+
 
     }
 }
